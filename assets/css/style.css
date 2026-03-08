@@ -1,0 +1,206 @@
+:root {
+  --main-bg: #054239;
+  --main-dark: #02241f;
+  --accent-color: #b9a77a;
+}
+
+body {
+  font-family: "Noto Kufi Arabic", sans-serif;
+  background-color: #f8fcfb;
+}
+
+body.splash-active {
+  overflow: hidden;
+}
+body.splash-active #scroll-top {
+  display: none !important;
+}
+
+/* ================================== */
+/* شاشة الافتتاح (Splash Screen) */
+/* ================================== */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.door {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: var(--main-dark);
+  overflow: hidden;
+  transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.8s;
+  z-index: 1;
+}
+
+.door::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/islamic_back.svg");
+  background-size: 400px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.door.right {
+  right: 0;
+}
+.door.left {
+  left: 0;
+}
+
+.door.right::before {
+  background-position: right center;
+}
+.door.left::before {
+  background-position: left center;
+}
+
+#splash-screen.open .door.right {
+  transform: translateX(100%);
+}
+#splash-screen.open .door.left {
+  transform: translateX(-100%);
+}
+
+.splash-content {
+  position: relative;
+  z-index: 2;
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.5s;
+}
+
+.logo-pulse {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#splash-screen.open .splash-content {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+.custom-btn {
+  background-color: var(--accent-color);
+  color: var(--main-dark);
+  font-weight: 800;
+  font-size: 1.2rem;
+  padding: 12px 40px;
+  border-radius: 50px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #f4a261;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* ================================== */
+/* إعدادات الناف بار والألوان الأساسية */
+/* ================================== */
+#main-content {
+  opacity: 0;
+  transition: opacity 1.5s ease-in;
+}
+
+body.site-loaded #main-content {
+  opacity: 1;
+}
+
+.custom-navbar {
+  background: linear-gradient(90deg, var(--main-dark), var(--main-bg));
+}
+.custom-navbar .nav-link:hover {
+  color: var(--accent-color) !important;
+}
+.main-text-color {
+  color: var(--main-bg);
+}
+
+/* ================================== */
+/* تصميم بطاقات الأنظمة (System Cards)*/
+/* ================================== */
+
+.system-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.system-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1.5rem 3rem rgba(5, 66, 57, 0.15) !important; /* ظل خفيف بلون المدرسة */
+}
+
+.card-icon i {
+  color: var(--main-bg);
+}
+
+.custom-outline-btn {
+  color: var(--main-bg);
+  border: 2px solid var(--main-bg);
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.custom-outline-btn:hover {
+  background-color: var(--main-bg);
+  color: #ffffff;
+}
+
+/* ================================== */
+/* تصميم الفوتر (Footer) */
+/* ================================== */
+
+.footer-link {
+  transition:
+    color 0.3s ease,
+    padding-right 0.3s ease;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: var(--accent-color) !important;
+  padding-right: 8px;
+}
+
+.social-icon {
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+  display: inline-block;
+}
+
+.social-icon:hover {
+  color: var(--accent-color) !important;
+  transform: translateY(-5px);
+}
