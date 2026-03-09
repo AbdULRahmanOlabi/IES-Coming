@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  document.getElementById("current-year").textContent =
+    new Date().getFullYear();
+
   if (launchBtn) {
     launchBtn.addEventListener("click", () => {
       const launchSound = document.getElementById("launch-sound");
