@@ -17,7 +17,7 @@ body.splash-active #scroll-top {
 }
 
 /* ================================== */
-/* شاشة الافتتاح (Splash Screen) */
+/* (Splash Screen) */
 /* ================================== */
 #splash-screen {
   position: fixed;
@@ -106,24 +106,74 @@ body.splash-active #scroll-top {
 }
 
 .custom-btn {
-  background-color: var(--accent-color);
-  color: var(--main-dark);
+  background-color: var(--accent-color) !important;
+  color: var(--main-dark) !important;
   font-weight: 800;
   font-size: 1.2rem;
   padding: 12px 40px;
   border-radius: 50px;
-  border: none;
+  border: 2px solid var(--accent-color) !important;
   transition: all 0.3s ease;
 }
 
 .custom-btn:hover {
-  background-color: #f4a261;
-  color: white;
+  background-color: transparent !important;
+  color: var(--accent-color) !important;
+  border: 2px solid var(--accent-color) !important;
   transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.splash-wrapper {
+  margin-bottom: 10rem;
+}
+.splash-logo {
+  max-width: 150px;
+}
+.ministry-title {
+  color: var(--accent-color);
+  word-spacing: 3px;
+  margin-bottom: 5rem;
+}
+.main-title {
+  font-size: 3.5rem;
 }
 
 /* ================================== */
-/* إعدادات الناف بار والألوان الأساسية */
+/* (Responsive Splash Screen) */
+/* ================================== */
+@media (max-width: 768px) {
+  .splash-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  .splash-logo {
+    max-width: 100px;
+  }
+
+  .ministry-title {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    word-spacing: normal;
+  }
+
+  .main-title {
+    font-size: 2rem !important;
+  }
+
+  .splash-desc {
+    font-size: 1.1rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .custom-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* ================================== */
+/* General Style */
 /* ================================== */
 #main-content {
   opacity: 0;
@@ -145,7 +195,66 @@ body.site-loaded #main-content {
 }
 
 /* ================================== */
-/* تصميم بطاقات الأنظمة (System Cards)*/
+/* Responsive */
+/* ================================== */
+
+@media (max-width: 768px) {
+  .custom-navbar .container {
+    flex-wrap: wrap !important;
+  }
+
+  .custom-navbar .navbar-brand {
+    max-width: 75%;
+    display: flex;
+    align-items: center;
+  }
+
+  .custom-navbar .navbar-brand span {
+    font-size: 1rem !important;
+    white-space: normal;
+  }
+
+  .custom-navbar .navbar-brand img {
+    max-width: 35px !important;
+  }
+
+  .custom-navbar .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.15);
+    margin-top: 15px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .custom-navbar .navbar-brand span {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* ================================== */
+/* Nav Button */
+/* ================================== */
+
+.custom-navbar .navbar-toggler {
+  background-color: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.custom-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.custom-navbar .navbar-toggler:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  border-color: var(--accent-color) !important;
+}
+
+/* ================================== */
+/* (System Cards) */
 /* ================================== */
 
 .system-card {
@@ -158,7 +267,7 @@ body.site-loaded #main-content {
 
 .system-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 1.5rem 3rem rgba(5, 66, 57, 0.15) !important; /* ظل خفيف بلون المدرسة */
+  box-shadow: 0 1.5rem 3rem rgba(5, 66, 57, 0.15) !important;
 }
 
 .card-icon i {
@@ -178,7 +287,7 @@ body.site-loaded #main-content {
 }
 
 /* ================================== */
-/* تصميم الفوتر (Footer) */
+/* (Footer) */
 /* ================================== */
 
 .footer-link {
